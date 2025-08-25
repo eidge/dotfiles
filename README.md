@@ -12,7 +12,7 @@
 ```
 > cd ~ && git clone https://github.com/eidge/dotfiles
 > cd dotfiles
-> stow .
+> scripts/setup
 ```
 
 ### Aerospace

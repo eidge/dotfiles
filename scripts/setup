@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+# Dependencies
+
+brew install gh
+
+# Setup aerospace
+
+brew install --cask nikitabobko/tap/aerospace;
+
+defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer;
+defaults write com.apple.dock expose-group-apps -bool true && killall Dock;
+
+# Symlink dotfiles
+
+stow .;
