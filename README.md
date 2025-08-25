@@ -22,7 +22,6 @@
 
 ## To do
 
-- git config
 - ghostty
 - nvim
 - script to install dependencies

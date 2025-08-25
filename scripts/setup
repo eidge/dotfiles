@@ -3,7 +3,7 @@ set -e
 
 # Dependencies
 
-brew install gh
+brew install gh nvim
 
 # Setup aerospace
 
@@ -11,6 +11,10 @@ brew install --cask nikitabobko/tap/aerospace;
 
 defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer;
 defaults write com.apple.dock expose-group-apps -bool true && killall Dock;
+
+# Setup Ghostty
+
+brew install --cask ghostty
 
 # Symlink dotfiles
 
