@@ -3,7 +3,7 @@ set -e
 
 # Dependencies
 
-brew install gh nvim stow
+brew install gh nvim stow fzf
 
 # Setup aerospace
 
