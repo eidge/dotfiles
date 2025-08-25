@@ -204,3 +204,21 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+# Callbacks
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Safari'
+    check-further-callbacks = false
+    run = ['move-node-to-workspace W']
+
+[[on-window-detected]]
+    if.app-id = 'com.mitchellh.ghostty'
+    check-further-callbacks = false
+    run = ['move-node-to-workspace S']
+
+# Screen assignment
+
+[workspace-to-monitor-force-assignment]
+    W = '^built-in retina display$'
+    S = 'secondary'

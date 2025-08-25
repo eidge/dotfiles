@@ -10,9 +10,15 @@
 ## Setup
 
 ```
+> cd ~ && git clone https://github.com/eidge/dotfiles
 > cd dotfiles
 > stow .
 ```
+
+### Aerospace
+
+- Disable per-screen spaces: `defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer`
+- Fix small windows in mission control: `defaults write com.apple.dock expose-group-apps -bool true && killall Dock`
 
 ## To do
 
