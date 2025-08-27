@@ -7,9 +7,3 @@
 > cd dotfiles
 > scripts/setup
 ```
-
-## To do
-
-- nvim
-
-
