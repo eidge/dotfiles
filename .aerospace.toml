@@ -219,7 +219,6 @@ automatically-unhide-macos-hidden-apps = true
     check-further-callbacks = true
     run = ['move-node-to-workspace S']
 
-
 # Screen assignment
 
 [workspace-to-monitor-force-assignment]
