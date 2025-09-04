@@ -4,6 +4,7 @@ return {
         { "mason-org/mason.nvim", opts = {} },
         { "mason-org/mason-lspconfig.nvim", opts = {} },
     },
+    lazy = false,
     keys = {
       {
         "<leader>cd",
@@ -15,6 +16,7 @@ return {
       },
     },
     config = function()
+      lsp = require("lspconfig");
       vim.diagnostic.config {
         severity_sort = true,
         float = { border = 'rounded' },
