@@ -1,3 +1,6 @@
+# Enviroment variables
+EDITOR=nvim
+
 # Keep secrets gitignored
 source .secrets
 
@@ -68,6 +71,7 @@ alias g="git"
 alias ls="ls --color"
 alias c="clear"
 alias vim="nvim"
+alias ..="cd .."
 
 # Shell integrations
 
