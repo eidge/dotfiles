@@ -1,6 +1,3 @@
-. "$HOME/.asdf/asdf.sh"
-fpath=(${ASDF_DIR:-$HOME/.asdf}/completions $fpath)
-
 # Keep secrets gitignored
 source .secrets
 
@@ -31,6 +28,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light asdf-vm/asdf
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
