@@ -9,6 +9,7 @@ return {
     { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
     { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
     { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+    { "<leader>d", function() Snacks.picker.diagnostics() end, desc = "Open diagnostics" },
     { "<leader>/", function() Snacks.terminal.toggle("zsh") end, "Toggle terminal" },
     { "<leader>/", function() Snacks.terminal.toggle("zsh") end, "Toggle terminal", mode="t" },
     { "<leader>l", function() Snacks.terminal.toggle("claude") end, "Toggle claude" },
