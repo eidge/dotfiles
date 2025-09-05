@@ -31,6 +31,7 @@ vim.opt.smartcase =true
 vim.opt.termguicolors = true
 
 vim.opt.showmode = false
+vim.opt.hidden = false
 
 -- No automatic comment insertion
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
