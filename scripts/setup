@@ -3,7 +3,7 @@ set -e
 
 # Dependencies
 
-brew install gh nvim stow fzf rg fd asdf
+brew install gh nvim stow fzf rg fd asdf tree-sitter
 
 # Setup aerospace
 
