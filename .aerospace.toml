@@ -227,6 +227,10 @@ automatically-unhide-macos-hidden-apps = true
 # Screen assignment
 
 [workspace-to-monitor-force-assignment]
+    1 = '^built-in retina display$'
+    2 = '^built-in retina display$'
     W = '^built-in retina display$'
     S = 'secondary'
     D = 'secondary'
+    4 = 'secondary'
+    5 = 'secondary'
