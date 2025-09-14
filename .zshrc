@@ -72,7 +72,9 @@ alias ls="ls --color"
 alias c="clear"
 alias vim="nvim"
 alias ..="cd .."
+alias cd="z"
 
 # Shell integrations
 
 eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
