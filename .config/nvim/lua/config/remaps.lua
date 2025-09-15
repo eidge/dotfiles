@@ -12,6 +12,9 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
 
+-- LSP code actions
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions' })
+
 -- Highlight yanked selections
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlights text when yanking",
