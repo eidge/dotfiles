@@ -1,5 +1,6 @@
 # Enviroment variables
-EDITOR=nvim
+export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
+export EDITOR=nvim
 
 # Keep secrets gitignored
 source $HOME/.secrets
@@ -78,3 +79,8 @@ alias cd="z"
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+
+if [ -e ~/.zshrc.local ]; then
+  # Put local machine overrides here.
+  source ~/.zshrc.local
+fi

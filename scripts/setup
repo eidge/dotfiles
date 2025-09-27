@@ -5,16 +5,16 @@ set -e
 
 brew install gh nvim stow fzf rg fd asdf tree-sitter zoxide
 
-# Setup aerospace
-
-brew install --cask nikitabobko/tap/aerospace;
+# MacOS settings
 
 defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer;
 defaults write com.apple.dock expose-group-apps -bool true && killall Dock;
 
-# Setup Ghostty
-
+# Other apps
+brew install --cask nikitabobko/tap/aerospace;
+brew install --cask obsidian
 brew install --cask ghostty
+brew install --cask keepingyouawake
 
 # Symlink dotfiles
 
