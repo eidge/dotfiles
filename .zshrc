@@ -73,14 +73,19 @@ alias ls="ls --color"
 alias c="clear"
 alias vim="nvim"
 alias ..="cd .."
-alias cd="z"
 
 # Shell integrations
-
 eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
+
+# Only alias cd to z if zoxide initialized successfully
+if command -v zoxide &>/dev/null && [[ "$CLAUDECODE" != "1" ]]; then
+  eval "$(zoxide init zsh)"
+  alias cd="z"
+fi
 
 if [ -e ~/.zshrc.local ]; then
   # Put local machine overrides here.
   source ~/.zshrc.local
 fi
+eval "$(rbenv init -)"
+export RACK_ENV=development

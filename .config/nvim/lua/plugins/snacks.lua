@@ -20,6 +20,5 @@ return {
       enabled = true,
       example = "compact_files",
     },
-
   },
 }

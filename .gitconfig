@@ -1,8 +1,8 @@
 [github]
-    user = eidge
+    user = hugofigma
 [user]
     name = Hugo Ribeira
-    email = hugoribeira@gmail.com
+    email = hribeira@figma.com
 [push]
   default = current
 [color]
@@ -14,6 +14,7 @@
   cm = commit -m
   ci = commit -v
   co = checkout
+  b = branch
   d = diff -w
   p = push
   pl = pull
