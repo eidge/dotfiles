@@ -89,3 +89,4 @@ if [ -e ~/.zshrc.local ]; then
 fi
 eval "$(rbenv init -)"
 export RACK_ENV=development
+

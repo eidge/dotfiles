@@ -12,8 +12,9 @@ return {
     { "<leader>d", function() Snacks.picker.diagnostics() end, desc = "Open diagnostics" },
     { "<leader>/", function() Snacks.terminal.toggle("zsh") end, "Toggle terminal" },
     { "<leader>/", function() Snacks.terminal.toggle("zsh") end, "Toggle terminal", mode="t" },
-    { "<leader>l", function() Snacks.terminal.toggle("claude") end, "Toggle claude" },
-    { "<leader>l", function() Snacks.terminal.toggle("claude") end, "Toggle claude", mode="t" },
+    { "<leader>l", function() Snacks.terminal.toggle("~/.claude/local/claude") end, "Toggle claude" },
+    { "<leader>l", function() Snacks.terminal.toggle("~/.claude/local/claude") end, "Toggle claude", mode="t" },
+    { "jk", [[<C-\><C-n>]], "Normal mode in terminal", mode="t" },
   },
   opts = {
     dashboard = {
