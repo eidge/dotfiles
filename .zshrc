@@ -87,5 +87,3 @@ if [ -e ~/.zshrc.local ]; then
   # Put local machine overrides here.
   source ~/.zshrc.local
 fi
-eval "$(rbenv init -)"
-export RACK_ENV=development
