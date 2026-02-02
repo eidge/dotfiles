@@ -2,6 +2,8 @@
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 export EDITOR=nvim
 
+bindkey -e
+
 # Keep secrets gitignored
 source $HOME/.secrets
 
@@ -73,6 +75,7 @@ alias ls="ls --color"
 alias c="clear"
 alias vim="nvim"
 alias ..="cd .."
+alias mux="tmuxinator"
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -90,3 +93,10 @@ fi
 eval "$(rbenv init -)"
 export RACK_ENV=development
 
+
+# bun completions
+[ -s "/Users/hfabiaopiresdaribeira/.bun/_bun" ] && source "/Users/hfabiaopiresdaribeira/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
