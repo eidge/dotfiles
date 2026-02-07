@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     {
-      '<D-p>',
+      '<C-p>',
       function()
         require('fzf-lua').global()
       end,
@@ -11,7 +11,7 @@ return {
       desc = 'Find files or symbols',
     },
     {
-      '<D-f>',
+      '<C-f>',
       function()
         require('fzf-lua').live_grep()
       end,

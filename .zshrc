@@ -2,6 +2,8 @@
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 export EDITOR=nvim
 
+bindkey -e
+
 # Keep secrets gitignored
 source $HOME/.secrets
 
@@ -73,6 +75,7 @@ alias ls="ls --color"
 alias c="clear"
 alias vim="nvim"
 alias ..="cd .."
+alias mux="tmuxinator"
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -87,4 +90,5 @@ if [ -e ~/.zshrc.local ]; then
   # Put local machine overrides here.
   source ~/.zshrc.local
 fi
+
 export PATH="$HOME/.local/bin:$PATH"
