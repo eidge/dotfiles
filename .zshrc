@@ -87,3 +87,4 @@ if [ -e ~/.zshrc.local ]; then
   # Put local machine overrides here.
   source ~/.zshrc.local
 fi
+export PATH="$HOME/.local/bin:$PATH"
