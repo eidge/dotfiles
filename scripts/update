@@ -1,1 +1,3 @@
-stow ~/dotfiles/ -t $HOME
+set -e
+
+stow .

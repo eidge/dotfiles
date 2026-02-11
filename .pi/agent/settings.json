@@ -1,0 +1,11 @@
+{
+  "lastChangelogVersion": "0.52.9",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-4-6",
+  "enabledModels": [
+    "anthropic/claude-opus-4-6",
+    "anthropic/claude-haiku-4-5",
+    "anthropic/claude-sonnet-4-5"
+  ],
+  "defaultThinkingLevel": "high"
+}

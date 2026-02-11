@@ -4,3 +4,5 @@
 .config/configstore/
 .config/graphite/user_config
 .config/htop/
+
+.pi/agent/sessions

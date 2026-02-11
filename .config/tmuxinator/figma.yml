@@ -50,3 +50,4 @@ windows:
   - server: ./devbox server
   - claude: claude
   - claude-2: claude
+  - desktop: cd desktop
