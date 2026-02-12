@@ -1,7 +1,7 @@
-# /Users/hfabiaopiresdaribeira/.config/tmuxinator/figma.yml
+# /Users/hfabiaopiresdaribeira/.config/tmuxinator/dotfiles.yml
 
-name: figma
-root: ~/figma/figma
+name: dotfiles
+root: ~/dotfiles/
 
 # Optional tmux socket
 # socket_name: foo
@@ -46,8 +46,5 @@ root: ~/figma/figma
 
 windows:
   - editor: vim
-  - shell: git fetch origin master
-  - server: ./devbox server
-  - claude: claude
+  - shell: ls
   - pi: pi
-  - desktop: cd desktop

@@ -1,3 +1,4 @@
 macos-titlebar-style = hidden
 quit-after-last-window-closed = true
 auto-update = download
+keybind = shift+enter=text:\n
