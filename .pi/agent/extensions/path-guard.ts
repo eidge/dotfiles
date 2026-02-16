@@ -14,7 +14,27 @@
 
 import path from "node:path";
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
-import { isToolCallEventType } from "@mariozechner/pi-coding-agent";
+import fs from "node:fs";
+import { isToolCallEventType, getAgentDir } from "@mariozechner/pi-coding-agent";
+
+/** Resolve the pi package installation directory from process.argv[1]. */
+function resolvePackageDir(): string {
+  const mainScript = process.argv[1];
+  if (!mainScript) return "";
+  // pi's entry is typically <package-dir>/dist/main.js — walk up to find package root
+  let dir = path.resolve(path.dirname(mainScript));
+  while (dir !== path.dirname(dir)) {
+    const pkgPath = path.join(dir, "package.json");
+    if (fs.existsSync(pkgPath)) {
+      try {
+        const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
+        if (pkg.name === "@mariozechner/pi-coding-agent") return dir;
+      } catch { /* ignore parse errors */ }
+    }
+    dir = path.dirname(dir);
+  }
+  return "";
+}
 
 /** Built-in tools we know how to inspect for path safety. */
 const KNOWN_TOOLS = new Set(["read", "write", "edit", "bash"]);
@@ -27,8 +47,12 @@ export default function (pi: ExtensionAPI) {
   let allowedTools: Set<string> = new Set();
 
   // Reset the allowlists whenever a session starts (new or resumed).
-  pi.on("session_start", async () => {
-    allowedDirs = new Set();
+  pi.on("session_start", async (_event, ctx) => {
+    allowedDirs = new Set([
+      path.normalize(getAgentDir()),
+      path.normalize(path.resolve(ctx.cwd, ".pi")),
+      path.normalize(resolvePackageDir()),
+    ]);
     allowedTools = new Set();
   });
 
