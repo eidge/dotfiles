@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ts=$(date +%Y%m%d-%H%M%S)
+conflicts=$(stow -n -v . 2>&1 | awk -F': ' '/existing target is neither/ {print $2}')
+
+if [ -n "$conflicts" ]; then
+  mkdir -p "$HOME/.dotfiles-backup-$ts"
+    echo "$conflicts" | while read -r f; do
+    mkdir -p "$HOME/.dotfiles-backup-$ts/$(dirname "$f")"
+    mv "$HOME/$f" "$HOME/.dotfiles-backup-$ts/$f"
+  done
+fi
+
+stow -v .

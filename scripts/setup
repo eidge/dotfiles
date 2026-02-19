@@ -1,24 +1,32 @@
 #!/bin/bash
 set -e
 
-# Dependencies
+OS="$(uname -s)"
 
-brew install gh nvim stow fzf rg fd asdf tree-sitter zoxide tmux tmuxinator
+# Dependencies (common)
+COMMON_PKGS="stow zoxide tmux tmuxinator"
+
+if [ "$OS" = "Darwin" ]; then
+  brew install $COMMON_PKGS gh nvim asdf rg fd tree-sitter fzf
+elif [ "$OS" = "Linux" ]; then
+  sudo apt-get update
+  sudo apt-get install -y stow $COMMON_PKGS ripgrep fd-find
+  mise use -g fzf@latest
+fi
 
 # Tmux
 [ -d ~/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# MacOS settings
+# macOS-only settings
+if [ "$OS" = "Darwin" ]; then
+  defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer
+  defaults write com.apple.dock expose-group-apps -bool true && killall Dock
 
-defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer;
-defaults write com.apple.dock expose-group-apps -bool true && killall Dock;
-
-# Other apps
-brew install --cask nikitabobko/tap/aerospace;
-brew install --cask obsidian
-brew install --cask ghostty
-brew install --cask keepingyouawake
+  brew install --cask nikitabobko/tap/aerospace
+  brew install --cask obsidian
+  brew install --cask ghostty
+  brew install --cask keepingyouawake
+fi
 
 # Symlink dotfiles
-
-stow .;
+stow .
