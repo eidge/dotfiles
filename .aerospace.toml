@@ -257,5 +257,7 @@ automatically-unhide-macos-hidden-apps = true
     W = '^built-in retina display$'
     S = 'secondary'
     D = 'secondary'
+    M = 'secondary'
+    N = 'secondary'
     4 = 'secondary'
     5 = 'secondary'
