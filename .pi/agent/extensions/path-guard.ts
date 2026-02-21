@@ -52,6 +52,7 @@ export default function (pi: ExtensionAPI) {
       path.normalize(getAgentDir()),
       path.normalize(path.resolve(ctx.cwd, ".pi")),
       path.normalize(resolvePackageDir()),
+      "/tmp",
     ]);
     allowedTools = new Set();
   });
