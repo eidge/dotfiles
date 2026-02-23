@@ -80,9 +80,13 @@ alias mux="tmuxinator"
 # Shell integrations
 eval "$(fzf --zsh)"
 
-# Only alias cd to z if zoxide initialized successfully
+# Only use zoxide if available and not in Claude Code
 if command -v zoxide &>/dev/null && [[ "$CLAUDECODE" != "1" ]]; then
+  # Unalias zi if set by zinit, to avoid conflict with zoxide's zi function
+  (( ${+aliases[zi]} )) && unalias zi
   eval "$(zoxide init zsh)"
+  # Override _z_cd to use builtin cd, so alias cd="z" doesn't cause recursion
+  _z_cd() { builtin cd "$@" || return "$?"; [ "$_ZO_ECHO" = "1" ] && echo "$PWD"; }
   alias cd="z"
 fi
 
