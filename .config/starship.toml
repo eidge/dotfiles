@@ -1,7 +1,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](color_orange)\
+$env_var\
+${custom.prompt_start}\
 [](bg:color_yellow fg:color_orange)\
 $directory\
 [](fg:color_yellow bg:color_aqua)\
@@ -28,6 +29,15 @@ color_orange = '#d65d0e'
 color_purple = '#b16286'
 color_red = '#cc241d'
 color_yellow = '#d79921'
+
+[env_var.CODER_WORKSPACE_NAME]
+format = '[](color_red)[ coder: $env_value ](bold fg:color_fg0 bg:color_red)[](fg:color_red bg:color_orange)'
+
+[custom.prompt_start]
+command = "echo -n ''"
+when = '[ -z "$CODER_WORKSPACE_NAME" ]'
+format = '[](color_orange)'
+shell = ['bash', '--noprofile', '--norc']
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
