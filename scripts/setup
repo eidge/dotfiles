@@ -29,4 +29,5 @@ if [ "$OS" = "Darwin" ]; then
 fi
 
 # Symlink dotfiles
+touch ~/.secrets
 scripts/stow-force
