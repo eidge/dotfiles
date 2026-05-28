@@ -5,7 +5,7 @@ return {
         { 
           "mason-org/mason-lspconfig.nvim",
           opts = {
-            ensure_installed = { "vtsls", "eslint", "sorbet" }
+            ensure_installed = { "tsgo", "eslint", "sorbet" }
           }
         },
     },
@@ -23,15 +23,7 @@ return {
     config = function()
       lsp = require("lspconfig");
 
-      vim.lsp.config('vtsls', {
-        settings = {
-          typescript = {
-            tsserver = {
-              maxTsServerMemory = 24576,
-              nodePath = "/usr/local/bin/node"
-            },
-          },
-        },
+      vim.lsp.config('tsgo', {
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
       })
     end,
